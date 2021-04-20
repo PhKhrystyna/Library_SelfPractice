@@ -14,9 +14,9 @@ import org.junit.runner.RunWith;
         },
 
         features = "src/test/resources/features",
-        glue = "src/test/java/com/LibraryCT/step_definitions",
+        glue = "com/LibraryCT/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = "@login"
 )
 
 
