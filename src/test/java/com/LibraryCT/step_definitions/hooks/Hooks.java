@@ -1,5 +1,6 @@
 package com.LibraryCT.step_definitions.hooks;
 
+import com.LibraryCT.pages.LoginPage;
 import com.LibraryCT.utilities.ConfigurationReader;
 import com.LibraryCT.utilities.Driver;
 import io.cucumber.java.After;
@@ -10,6 +11,14 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 
+    LoginPage loginPage = new LoginPage();
+
+     @Before
+          public void landingPage (){
+         loginPage.LandingPage();
+       System.out.println("Before Hooks are in action");
+
+     }
 
 
     @After

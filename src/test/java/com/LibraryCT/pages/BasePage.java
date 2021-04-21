@@ -7,8 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-    public BasePage(){
-        PageFactory.initElements(Driver.getDriver(), this);
+    public BasePage(){ PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
@@ -17,6 +16,19 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//span[.='Test Librarian 16']")
     public WebElement librarianRole;
+
+    @FindBy(id="navbarDropdown")
+    public WebElement logOutDropdownMenu;
+
+    @FindBy(xpath = "//a[.='Log Out']")
+    public WebElement logOutButton;
+
+
+    public void loggingOut(){
+        logOutDropdownMenu.click();
+        logOutButton.click();
+    }
+
 
 
 }
