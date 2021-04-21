@@ -5,6 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public abstract class BasePage {
 
     public BasePage(){ PageFactory.initElements(Driver.getDriver(), this);
@@ -22,6 +26,18 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//a[.='Log Out']")
     public WebElement logOutButton;
+
+    @FindBy(xpath = "//a[@class='nav-link']")
+    public List<WebElement> taskModules;
+
+    public List<String> taskModule(){
+        List<String> list = new ArrayList<>();
+
+        for(WebElement each: taskModules)
+            list.add(each.getText());
+
+        return  list;
+    }
 
 
     public void loggingOut(){
